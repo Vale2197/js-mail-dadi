@@ -8,32 +8,54 @@ Prima di partire a scrivere codice poniamoci qualche domanda: Che ci sia un arra
 const checkedUsers = ["valentina@gmail.com", "lorenzo@gmail.com", "joseph@gmail.com", "riccardo@gmail.com"]
 
 /* chiedere mail all utente */
-const userMail = prompt("inserisci la tua e-mail")
+const userMail = document.getElementById("mail")
+
+const btn = document.getElementById("btn")
 
 
 /* verifica e-mail */
-if (checkedUsers.includes(userMail) ) {
-    alert("puoi accedere")
 
+function risultato() {
 
-    /* chiedere numero random */
-    const numPc = Math.floor(Math.random() * 6) + 1;
+    
+    if (checkedUsers.includes(userMail.value)) {
+        alert("puoi accedere")
+    
+    
+        /* chiedere numero random */
+        const numPc = Math.floor(Math.random() * 6) + 1;
+    
+        const userNum = parseInt(prompt("adesso inserisci un num. da 1 a 6"));
+        /* console.log(userNum, numPc); */
+    
+    
+        /* dichiarare il vincitore */
+        if (userNum > numPc) {
+            
+            const result = document.getElementById("result");
 
-    const userNum = parseInt(prompt("adesso inserisci un num. da 1 a 6"));
-    /* console.log(userNum, numPc); */
+            result.innerHTML = ` 
+                                bravo, hai vinto! poichè il tuo num: ${userNum} è superiore a quello del tuo avversario: ${numPc}
+                                
+                                `
+        }
+        else {
+           
+            const result = document.getElementById("result");
 
+            result.innerHTML = `
+                                     mi dispiace hai perso.. poichè il tuo num: ${userNum} è inferiore a quello del tuo avversario: ${numPc}
+                                `
 
-    /* dichiarare il vincitore */
-    if (userNum > numPc) {
-        alert(`bravo, hai vinto! poichè il tuo num: ${userNum} è superiore a quello del tuo avversario: ${numPc}`) 
-    }
+        }
+    
+    
+    } 
+    
     else {
-        alert(`mi dispiace hai perso.. poichè il tuo num: ${userNum} è inferiore a quello del tuo avversario: ${numPc}`)
+        alert("mi dispiace, ma non puoi accedere al gioco")
     }
-
-
-} 
-
-else {
-    alert("mi dispiace, ma non puoi accedere al gioco")
+    
 }
+
+
