@@ -15,6 +15,7 @@ const btn = document.getElementById("btn")
 const verify = document.getElementById("check")
 
 
+
 /* verifica e-mail */
 
 function risultato() {
@@ -29,7 +30,7 @@ function risultato() {
         /* chiedere numero random */
         const numPc = Math.floor(Math.random() * 6) + 1;
     
-        const userNum = parseInt(prompt("adesso inserisci un num. da 1 a 6"));
+        const userNum = parseInt(document.getElementById("num").value);
         /* console.log(userNum, numPc); */
     
     
