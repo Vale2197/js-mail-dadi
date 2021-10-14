@@ -12,6 +12,8 @@ const userMail = document.getElementById("mail")
 
 const btn = document.getElementById("btn")
 
+const verify = document.getElementById("check")
+
 
 /* verifica e-mail */
 
@@ -19,7 +21,9 @@ function risultato() {
 
     
     if (checkedUsers.includes(userMail.value)) {
-        alert("puoi accedere")
+        verify.innerHTML = `
+                            ciao, la tua e-mail: ${userMail.value} è registrata
+                            `
     
     
         /* chiedere numero random */
@@ -36,7 +40,7 @@ function risultato() {
 
             result.innerHTML = ` 
                                 bravo, hai vinto! poichè il tuo num: ${userNum} è superiore a quello del tuo avversario: ${numPc}
-                                
+
                                 `
         }
         else {
@@ -53,7 +57,9 @@ function risultato() {
     } 
     
     else {
-        alert("mi dispiace, ma non puoi accedere al gioco")
+        verify.innerHTML = `
+                            mi dispiace, ma la tua e-mail: ${userMail.value} non è registrata..
+                            `
     }
     
 }
