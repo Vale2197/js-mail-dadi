@@ -10,16 +10,21 @@ const checkedUsers = ["valentina@gmail.com", "lorenzo@gmail.com", "joseph@gmail.
 /* chiedere mail all utente */
 const userMail = prompt("inserisci la tua e-mail")
 
-const mail = userMail.value
-
+if (checkedUsers.includes(userMail) ) {
+    alert("puoi accedere")
+} else {
+    alert("mi dispiace, ma non puoi accedere al gioco")
+}
 
 /* verifica mail */
 
 for (let i = 0; i < checkedUsers.length; i++) {
     const users = checkedUsers[i];
-    
-    if (checkedUsers[i] === mail ) {
-        return true
-    } 
+    /* 
+    if (checkedUsers[i] === userMail ) {
+        alert("ok")
+    } else {
+        alert("no")
+    } */
     
 }
