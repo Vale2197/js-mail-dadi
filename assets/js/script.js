@@ -14,12 +14,8 @@ const btn = document.getElementById("btn")
 
 const verify = document.getElementById("check")
 
-
-
-/* verifica e-mail */
-
-function risultato() {
-
+btn.addEventListener("click", function() {
+    /* verifica e-mail */
     
     if (checkedUsers.includes(userMail.value)) {
         verify.innerHTML = `
@@ -38,20 +34,20 @@ function risultato() {
         if (userNum > numPc) {
             
             const result = document.getElementById("result");
-
+    
             result.innerHTML = ` 
                                 bravo, hai vinto! poichè il tuo num: ${userNum} è superiore a quello del tuo avversario: ${numPc}
-
+    
                                 `
         }
         else {
            
             const result = document.getElementById("result");
-
+    
             result.innerHTML = `
                                      mi dispiace hai perso.. poichè il tuo num: ${userNum} è inferiore a quello del tuo avversario: ${numPc}
                                 `
-
+    
         }
     
     
@@ -62,7 +58,10 @@ function risultato() {
                             mi dispiace, ma la tua e-mail: ${userMail.value} non è registrata..
                             `
     }
-    
-}
+
+})
+
+
+
 
 
