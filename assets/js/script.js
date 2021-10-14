@@ -10,21 +10,30 @@ const checkedUsers = ["valentina@gmail.com", "lorenzo@gmail.com", "joseph@gmail.
 /* chiedere mail all utente */
 const userMail = prompt("inserisci la tua e-mail")
 
+
+/* verifica e-mail */
 if (checkedUsers.includes(userMail) ) {
     alert("puoi accedere")
-} else {
+
+
+    /* chiedere numero random */
+    const numPc = Math.floor(Math.random() * 6) + 1;
+
+    const userNum = parseInt(prompt("adesso inserisci un num. da 1 a 6"));
+    /* console.log(userNum, numPc); */
+
+
+    /* dichiarare il vincitore */
+    if (userNum > numPc) {
+        alert(`bravo, hai vinto! poichè il tuo num: ${userNum} è superiore a quello del tuo avversario: ${numPc}`) 
+    }
+    else {
+        alert(`mi dispiace hai perso.. poichè il tuo num: ${userNum} è inferiore a quello del tuo avversario: ${numPc}`)
+    }
+
+
+} 
+
+else {
     alert("mi dispiace, ma non puoi accedere al gioco")
-}
-
-/* verifica mail */
-
-for (let i = 0; i < checkedUsers.length; i++) {
-    const users = checkedUsers[i];
-    /* 
-    if (checkedUsers[i] === userMail ) {
-        alert("ok")
-    } else {
-        alert("no")
-    } */
-    
 }
