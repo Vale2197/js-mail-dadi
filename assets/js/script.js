@@ -26,7 +26,7 @@ btn.addEventListener("click", function() {
         /* chiedere numero random */
         const numPc = Math.floor(Math.random() * 6) + 1;
     
-        const userNum = parseInt(document.getElementById("num").value);
+        const userNum = Math.floor(Math.random() * 6) + 1;
         /* console.log(userNum, numPc); */
     
     
@@ -40,7 +40,7 @@ btn.addEventListener("click", function() {
     
                                 `
         }
-        else {
+        else if (userNum < numPc){
            
             const result = document.getElementById("result");
     
@@ -48,6 +48,13 @@ btn.addEventListener("click", function() {
                                      mi dispiace hai perso.. poichè il tuo num: ${userNum} è inferiore a quello del tuo avversario: ${numPc}
                                 `
     
+        }
+        else {
+            const result = document.getElementById("result");
+    
+            result.innerHTML = `
+                                     pareggio!.. poichè il tuo num: ${userNum} è uguale a quello del tuo avversario: ${numPc}
+                                `
         }
     
     
